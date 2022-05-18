@@ -6,7 +6,6 @@ const contactsPath = path.resolve("./db/contacts.json");
 async function getListContact() {
   try {
     const data = await fs.readFile(contactsPath, "utf8");
-    // console.table(JSON.parse(data));
     return JSON.parse(data);
   } catch (error) {
     console.log(error);
@@ -30,7 +29,6 @@ async function getContactById(contactId) {
       return contact.id === contactId;
     });
     console.table(neededContact);
-    //   return neededContact
   } catch (error) {
     console.log(error);
   }
