@@ -43,4 +43,3 @@ function invokeAction({ action, id, name, email, phone }) {
 
 invokeAction(argv);
 
-// "Nola","nola@mail.com","8989-789-9786"

@@ -47,6 +47,7 @@ async function addContact(name, email, phone) {
     const contacts = await getListContact();
     const updatedContacts = [...contacts, newContact];
     await fs.writeFile(contactsPath, JSON.stringify(updatedContacts), "utf8");
+    console.table(updatedContacts)
   } catch (error) {
     console.log(error);
   }
@@ -59,6 +60,7 @@ async function removeContact(contactId) {
       return contact.id !== contactId;
     });
     await fs.writeFile(contactsPath, JSON.stringify(updatedContacts), "utf8");
+    console.table(updatedContacts);
   } catch (error) {}
 }
 
