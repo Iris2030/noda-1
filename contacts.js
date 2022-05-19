@@ -59,7 +59,9 @@ async function removeContact(contactId) {
     });
     await fs.writeFile(contactsPath, JSON.stringify(updatedContacts), "utf8");
     console.table(updatedContacts);
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 module.exports = { listContacts, getContactById, addContact, removeContact };
